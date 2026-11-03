@@ -1,0 +1,25 @@
+[package]
+name = "workshopdl-linux"
+version = "2.0.0"
+edition = "2021"
+rust-version = "1.88"
+description = "Steam Workshop downloader for Linux"
+license = "MIT"
+
+[dependencies]
+eframe = { version = "0.31", default-features = false, features = ["default_fonts", "glow", "wayland", "x11"] }
+egui = "0.31"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "gif", "webp"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+ureq = { version = "2.12", features = ["json"] }
+regex = "1"
+rfd = { version = "0.15", default-features = false, features = ["gtk3"] }
+arboard = { version = "3.6", features = ["wayland-data-control"] }
+zip = { version = "2", default-features = false, features = ["deflate"] }
+libc = "0.2"
+
+[profile.release]
+opt-level = 2
+lto = "thin"
+strip = true

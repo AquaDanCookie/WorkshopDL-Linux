@@ -1,0 +1,8 @@
+/target
+/Project/downloads
+/Project/steamcmd
+/Project/config
+*.log
+.opencode/
+target/
+.env
