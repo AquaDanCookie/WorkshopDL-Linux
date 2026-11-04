@@ -1,0 +1,70 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and publish Linux release
+    runs-on: ubuntu-latest
+    env:
+      LIBRARY_PATH: /usr/local/lib
+      LD_LIBRARY_PATH: /usr/local/lib
+      PKG_CONFIG_PATH: /usr/local/lib/pkgconfig
+    defaults:
+      run:
+        working-directory: '.'
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake g++ zlib1g-dev libxkbcommon-dev libwayland-dev libx11-dev libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev libxkbcommon-x11-dev libgl1-mesa-dev libegl1-mesa-dev
+
+      - name: Build TagLib 2
+        run: |
+          git clone --depth 1 --branch v2.0.2 --recurse-submodules --shallow-submodules https://github.com/taglib/taglib.git /tmp/taglib
+          cmake -S /tmp/taglib -B /tmp/taglib-build -DBUILD_SHARED_LIBS=ON -DBUILD_TESTING=OFF -DBUILD_EXAMPLES=OFF -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local
+          cmake --build /tmp/taglib-build -j2
+          sudo cmake --install /tmp/taglib-build
+          sudo ldconfig
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build release binary
+        run: cargo build --release
+
+      - name: Package release
+        run: |
+          set -euo pipefail
+          mkdir -p dist release
+          jq_filter=".packages[].targets[] | select(.kind[] == \"bin\") | .name"
+          mapfile -t bins < <(cargo metadata --no-deps --format-version 1 | jq -r "$jq_filter")
+          if [ ${#bins[@]} -eq 0 ]; then
+            echo "No binary targets found." >&2
+            exit 1
+          fi
+          for bin in "${bins[@]}"; do
+            cp "target/release/${bin}" dist/
+          done
+          for doc in README README.md README.txt LICENSE LICENSE.md COPYING; do
+            if [ -f "$doc" ]; then
+              cp "$doc" dist/
+            fi
+          done
+          tag=$(printf "%s" "$GITHUB_REF_NAME" | tr "/" "-")
+          repo="${GITHUB_REPOSITORY#*/}"
+          tar -C dist -czf "release/${repo}-${tag}-x86_64-linux.tar.gz" .
+
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: './release/*.tar.gz'
+          generate_release_notes: true
