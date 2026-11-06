@@ -7,9 +7,9 @@ is required.
 
 ![WorkshopDL main window](docs/screenshot.png)
 
-![Rust 1.88+](https://emblem.xdan.cc/badge.svg?label=rust&message=1.88%2B&look=connected&labelColor=%233D3D3D&color=%23A4D007)
-![Platform: Linux](https://emblem.xdan.cc/badge.svg?label=platform&message=Linux&look=connected&labelColor=%233D3D3D&color=%23A4D007)
-![License: MIT](https://emblem.xdan.cc/badge.svg?label=license&message=MIT&look=connected&labelColor=%233D3D3D&color=%23A4D007)
+![Rust 1.88+](https://emblem.xdan.cc/badge.svg?label=rust&message=1.88%2B&look=connected&labelColor=%233D3D3D&color=%23A4D007&icon=rust)
+![Platform: Linux](https://emblem.xdan.cc/badge.svg?label=platform&message=Linux&look=connected&labelColor=%233D3D3D&color=%23A4D007&icon=linux)
+![License: MIT](https://emblem.xdan.cc/badge.svg?label=license&message=MIT&look=connected&labelColor=%233D3D3D&color=%23A4D007&icon=material-symbols:license)
 
 ## Features
 
