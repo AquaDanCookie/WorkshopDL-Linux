@@ -1,15 +1,27 @@
-# WorkshopDL for Linux
+<p align="center">
+  <img src="assets/workshopdl-linux-128.png" width="112" alt="WorkshopDL icon">
+</p>
 
-A native Steam Workshop downloader for Linux, written entirely in Rust with
-[eframe](https://github.com/emilk/eframe) and
-[egui](https://github.com/emilk/egui). No Python, Electron, or embedded browser
-is required.
+<h1 align="center">WorkshopDL for Linux</h1>
 
-![WorkshopDL main window](docs/screenshot.png)
+<p align="center">
+  A native Steam Workshop downloader for Linux, written entirely in Rust with
+  <a href="https://github.com/emilk/eframe">eframe</a> and
+  <a href="https://github.com/emilk/egui">egui</a>. No Python, Electron, or
+  embedded browser is required.
+</p>
 
-![Rust 1.88+](https://emblem.xdan.cc/badge.svg?label=rust&message=1.88%2B&look=connected&labelColor=%233D3D3D&color=%23A4D007&icon=rust)
-![Platform: Linux](https://emblem.xdan.cc/badge.svg?label=platform&message=Linux&look=connected&labelColor=%233D3D3D&color=%23A4D007&icon=linux)
-![License: MIT](https://emblem.xdan.cc/badge.svg?label=license&message=MIT&look=connected&labelColor=%233D3D3D&color=%23A4D007&icon=material-symbols:license)
+<p align="center">
+  <img alt="Rust 1.88+" src="https://emblem.xdan.cc/badge.svg?label=rust&amp;message=1.88%2B&amp;look=connected&amp;labelColor=%233D3D3D&amp;color=%23A4D007&amp;icon=rust">
+  <img alt="Platform: Linux" src="https://emblem.xdan.cc/badge.svg?label=platform&amp;message=Linux&amp;look=connected&amp;labelColor=%233D3D3D&amp;color=%23A4D007&amp;icon=linux">
+  <img alt="License: MIT" src="https://emblem.xdan.cc/badge.svg?label=license&amp;message=MIT&amp;look=connected&amp;labelColor=%233D3D3D&amp;color=%23A4D007&amp;icon=material-symbols:license">
+</p>
+
+<p align="center">
+  <img src="docs/screenshot.png" alt="WorkshopDL main window">
+</p>
+
+---
 
 ## Features
 
