@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/workshopdl-linux-128.png" width="112" alt="WorkshopDL icon">
+  <img src="assets/workshopdl-linux-128.png?v=2" width="112" alt="WorkshopDL icon">
 </p>
 
 <h1 align="center">WorkshopDL</h1>
@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/screenshot.png" alt="WorkshopDL main window">
+  <img src="docs/screenshot.png?v=2" alt="WorkshopDL main window">
 </p>
 
 ---
