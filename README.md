@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/screenshot.png?v=2" alt="WorkshopDL main window">
+  <img src="docs/screenshot.png?v=3" alt="WorkshopDL main window">
 </p>
 
 ---
