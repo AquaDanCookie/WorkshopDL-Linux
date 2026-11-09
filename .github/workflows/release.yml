@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   release:
-    name: Build and publish Linux release
+    name: Build and publish release
     runs-on: ubuntu-latest
     env:
       LIBRARY_PATH: /usr/local/lib

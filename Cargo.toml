@@ -3,7 +3,7 @@ name = "workshopdl-linux"
 version = "2.0.0"
 edition = "2021"
 rust-version = "1.88"
-description = "Steam Workshop downloader for Linux"
+description = "Steam Workshop downloader"
 license = "MIT"
 
 [dependencies]

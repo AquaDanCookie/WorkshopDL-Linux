@@ -2,10 +2,10 @@
   <img src="assets/workshopdl-linux-128.png" width="112" alt="WorkshopDL icon">
 </p>
 
-<h1 align="center">WorkshopDL for Linux</h1>
+<h1 align="center">WorkshopDL</h1>
 
 <p align="center">
-  A native Steam Workshop downloader for Linux, written entirely in Rust with
+  A native Steam Workshop downloader, written entirely in Rust with
   <a href="https://github.com/emilk/eframe">eframe</a> and
   <a href="https://github.com/emilk/egui">egui</a>. No Python, Electron, or
   embedded browser is required.

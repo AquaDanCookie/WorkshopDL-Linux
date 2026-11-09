@@ -4,7 +4,7 @@ use std::path::{Path, PathBuf};
 use crate::util;
 
 pub const APP_ID: &str = "workshopdl-linux";
-pub const APP_NAME: &str = "WorkshopDL for Linux";
+pub const APP_NAME: &str = "WorkshopDL";
 pub const ICON_256: &[u8] = include_bytes!("../assets/workshopdl-linux-256.png");
 
 pub fn icon_data() -> Option<egui::IconData> {
@@ -55,9 +55,9 @@ pub fn install_integration(project: &Path) {
         "[Desktop Entry]\n\
          Type=Application\n\
          Version=1.0\n\
-         Name=WorkshopDL for Linux\n\
+         Name=WorkshopDL\n\
          GenericName=Steam Workshop Downloader\n\
-         Comment=Download Steam Workshop items on Linux\n\
+         Comment=Download Steam Workshop items\n\
          Exec={exec}\n\
          TryExec={try_exec}\n\
          Path={path_line}\n\

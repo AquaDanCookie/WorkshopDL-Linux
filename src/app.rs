@@ -1627,7 +1627,7 @@ impl WorkshopApp {
                                 .color(TEXT),
                         );
                         ui.label(
-                            RichText::new("Steam Workshop downloader for Linux")
+                            RichText::new("Steam Workshop downloader")
                                 .size(11.0)
                                 .color(MUTED),
                         );
